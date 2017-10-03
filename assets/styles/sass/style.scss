@@ -11,10 +11,10 @@ $color_gray_nurse_approx: #e9e9e9;
 $black: #000;
 
 //urls
-$url_0: url('../../../assets/images/hero.jpg');
-$url_1: url('../../../assets/images/who-we-are-bkgd.jpg');
-$url_2: url('../../../assets/images/watermark.png');
-$url_3: url('../../../assets/images/alt_logo.png');
+$url_0: url("../../../assets/images/hero.jpg");
+$url_1: url("../../../assets/images/who-we-are-bkgd.jpg");
+$url_2: url("../../../assets/images/watermark.png");
+$url_3: url("../../../assets/images/alt_logo.png");
 
 //@extend-elements
 //original selectors
@@ -36,7 +36,7 @@ html {
 	box-sizing: border-box;
 	 
 }
-*, *::after, *::abefore {
+*, *::after, *::before {
 	box-sizing: inherit;
 }
 
@@ -138,6 +138,11 @@ table {
 	background-color: $color_breaker_bay_approx;
 	margin-bottom: 30px;
 }
+
+
+// ***** Header / Hero *******
+
+
 .service {
 	margin: 90px auto;
 	display: flex;
@@ -269,14 +274,6 @@ table {
 			}
 		}
 	}
-	.hero-row .hero-copy {
-		position: absolute;
-		bottom: 80px;
-		.copy {
-			font-size: 21px;
-			width: 800px;
-		}
-	}
 }
 @media screen and(min-width: 750px) {
 	.block {
@@ -292,106 +289,27 @@ table {
 		max-width: 1500px;
 		padding: 0 70px;
 	}
-	.site-header {
-		display: -webkit-box;
-		display: -moz-box;
-		display: box;
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		-moz-box-align: center;
-		//Instead of the line below you could use @include box-align($alignment)
-		box-align: center;
-		-webkit-align-items: center;
-		-moz-align-items: center;
-		-ms-align-items: center;
-		-o-align-items: center;
-		align-items: center;
-		-ms-flex-align: center;
-		padding: 40px 0 0;
-		.logo-block {
-			float: left;
-			display: block;
-			margin-right: 2.35765%;
-			width: 8.3046%;
-			min-width: 200px;
-			&:last-child {
-				margin-right: 0;
-			}
-			.logo {
-				max-width: 180px;
-				width: 90%;
-			}
-		}
-		.head-line {
-			float: left;
-			display: block;
-			margin-right: 2.35765%;
-			width: 85.07284%;
-			border-bottom: 1px solid $white_30;
-			&:last-child {
-				margin-right: 0;
-			}
-			.social {
-				display: inline-block;
-				float: right;
-				a {
-					color: $white;
-					text-decoration: none;
-					text-align: right;
-					&:hover {
-						color: $color_breaker_bay_approx;
-					}
-					&:active {
-						color: $color_breaker_bay_approx;
-					}
-					.fa {
-						padding: 10px;
-						font-size: 23px;
-						&:last-of-type {
-							padding-right: 0;
-						}
-					}
-				}
-			}
-		}
-	}
+
 	.modal {
 		position: absolute;
 		bottom: 80px;
 		.play-button {
-			height: 140px;
-			width: 140px;
+			height: 140px !important;
+			width: 140px !important;
 			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 			border-radius: 140px;
 			.play-button-inner {
-				height: 120px;
-				width: 120px;
+				height: 120px !important;
+				width: 120px !important;
 				//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-				border-radius: 120px;
+				border-radius: 120px !important;
 				.fa.fa-play {
-					font-size: 45px;
+					font-size: 45px !important;
 				}
 			}
 		}
 	}
-	.hero {
-		background-image: $url_0;
-		background-size: cover;
-		background-position: center;
-		.overlay {
-			-webkit-transform: skewX(-40deg);
-			-moz-transform: skewX(-40deg);
-			-ms-transform: skewX(-40deg);
-			-o-transform: skewX(-40deg);
-			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-			transform: skewX(-40deg);
-			width: 100%;
-			left: -550px;
-		}
-	}
+
 	.about {
 		height: 100%;
 		.content {
@@ -556,43 +474,8 @@ table {
 			text-align: right;
 		}
 	}
-	.hero-row .hero-copy {
-		position: absolute;
-		.gray-bar {
-			display: block;
-		}
-		.headline {
-			font-size: 72px;
-			padding-bottom: 0;
-		}
-		.subheadline {
-			font-size: 36px;
-			padding-bottom: 25px;
-		}
-		.copy {
-			color: $color_quill_gray_approx;
-			font-size: 18px;
-			padding-bottom: 0;
-			max-width: 700px;
-		}
-	}
 }
-.site-header {
-	padding: 20px 0 0;
-	.logo-block {
-		margin: 0 auto;
-		height: auto;
-		.logo {
-			max-width: 120px;
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-	}
-	.head-line {
-		display: none;
-	}
-}
+
 .modal {
 	cursor: pointer;
 	.play-button {
@@ -727,61 +610,157 @@ table {
 		transform: scale(0.95);
 	}
 }
+
+
+// ************* Hero / Header ***************
+
 .hero {
 	background-image: $url_0;
 	background-size: cover;
 	background-position: center;
 	min-height: 600px;
-	height: 95vh;
-	.overlay {
-		-webkit-transform: skewX(-20deg);
-		-moz-transform: skewX(-20deg);
-		-ms-transform: skewX(-20deg);
-		-o-transform: skewX(-20deg);
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: skewX(-20deg);
-		background-color: $color_breaker_bay_approx;
-		width: 130%;
-		height: 100%;
-		display: block;
-		z-index: 1;
-		position: absolute;
-		top: 0;
-		left: -200px;
-		opacity: .25;
-	}
-}
+	height: 95vh; }
+.hero .overlay {
+	-webkit-transform: skewX(-20deg);
+	-moz-transform: skewX(-20deg);
+	-ms-transform: skewX(-20deg);
+	-o-transform: skewX(-20deg);
+	transform: skewX(-20deg);
+	background-color: #5f9ba4;
+	width: 130%;
+	height: 100%;
+	display: block;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: -200px;
+	opacity: .25; }
 
-// ************* Hero / Header ***************
 .hero-row {
+	width: 100%; }
+.hero-row .hero-copy {
+	margin-top: 25%;
+	text-align: left;
+	width: 90%;
+	position: relative; }
+.hero-row .hero-copy .gray-bar {
+	display: none; }
+.hero-row .hero-copy .headline {
+	color: #fff;
+	font-size: 42px;
+	line-height: 1;
+	padding-bottom: 10px; }
+.hero-row .hero-copy .subheadline {
+	font-size: 21px;
+	color: #fff;
+	padding-bottom: 15px; }
+.hero-row .hero-copy .copy {
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.5;
+	padding-bottom: 50px; }
+
+@media screen and (min-width: 750px) {
+	.hero {
+		background-image: $url_0;
+		background-size: cover;
+		background-position: center; }
+	.hero .overlay {
+		-webkit-transform: skewX(-40deg);
+		-moz-transform: skewX(-40deg);
+		-ms-transform: skewX(-40deg);
+		-o-transform: skewX(-40deg);
+		transform: skewX(-40deg);
+		width: 100%;
+		left: -550px; }
+
+	.hero-row .hero-copy {
+		position: absolute; }
+	.hero-row .hero-copy .gray-bar {
+		display: block; }
+	.hero-row .hero-copy .headline {
+		font-size: 72px;
+		padding-bottom: 0; }
+	.hero-row .hero-copy .subheadline {
+		font-size: 36px;
+		padding-bottom: 25px; }
+	.hero-row .hero-copy .copy {
+		color: #d3d3d3;
+		font-size: 18px;
+		padding-bottom: 0;
+		max-width: 700px; } }
+@media screen and (min-width: 1024px) {
+	.hero-row .hero-copy {
+		position: absolute;
+		bottom: 80px; }
+	.hero-row .hero-copy .copy {
+		font-size: 21px;
+		width: 800px; } }
+
+.site-header {
+	padding: 20px 0 0; }
+.site-header .logo-block {
+	margin: 0 auto;
+	height: auto; }
+.site-header .logo-block .logo {
+	max-width: 120px;
 	width: 100%;
-	.hero-copy {
-		margin-top: 25%;
-		text-align: left;
-		width: 90%;
-		position: relative;
-		.gray-bar {
-			display: none;
-		}
-		.headline {
-			color: $white;
-			font-size: 42px;
-			line-height: 1;
-			padding-bottom: 10px;
-		}
-		.subheadline {
-			font-size: 21px;
-			color: $white;
-			padding-bottom: 15px;
-		}
-		.copy {
-			color: $white;
-			font-size: 16px;
-			line-height: 1.5;
-			padding-bottom: 50px;
-		}
-	}
-}
+	height: auto;
+	display: block; }
+.site-header .head-line {
+	display: none; }
+@media screen and (min-width: 750px) {
+	.site-header {
+		display: -webkit-box;
+		display: -moz-box;
+		display: box;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-moz-box-align: center;
+		box-align: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		-ms-align-items: center;
+		-o-align-items: center;
+		align-items: center;
+		-ms-flex-align: center;
+		padding: 40px 0 0; }
+	.site-header .logo-block {
+		float: left;
+		display: block;
+		margin-right: 2.35765%;
+		width: 8.3046%;
+		min-width: 200px; }
+	.site-header .logo-block:last-child {
+		margin-right: 0; }
+	.site-header .logo-block .logo {
+		max-width: 180px;
+		width: 90%; }
+	.site-header .head-line {
+		float: left;
+		display: block;
+		margin-right: 2.35765%;
+		width: 85.07284%;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+	.site-header .head-line:last-child {
+		margin-right: 0; }
+	.site-header .head-line .social {
+		display: inline-block;
+		float: right; }
+	.site-header .head-line .social a {
+		color: #fff;
+		text-decoration: none;
+		text-align: right; }
+	.site-header .head-line .social a:hover, .site-header .head-line .social a:active {
+		color: #5f9ba4; }
+	.site-header .head-line .social a .fa {
+		padding: 10px;
+		font-size: 23px; }
+	.site-header .head-line .social a .fa:last-of-type {
+		padding-right: 0; } }
 
 // ************* About / Our Services  ***************
 .about {
@@ -1264,60 +1243,7 @@ portfolio .content {
 		}
 	}
 }
-.button-holster-one {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.button-holster-two {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.button-holster-three {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.one {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.two {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.three {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.text-one {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.text-two {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
-.text-three {
-	display: none;
-	&.active {
-		display: inline-block;
-	}
-}
+
 
 // ************* Contact ***************
 .contact {
@@ -1428,13 +1354,13 @@ portfolio .content {
 				ul {
 					float: left;
 					display: block;
-					margin-right: 2.57751%;
-					width: 44.04863%;
+					//margin-right: 2.57751%;
+					width: 44%;
 					&:last-child {
 						margin-right: 0;
 					}
 					&:last-of-type {
-						margin-left: 9.32523%;
+						margin-left: 0;
 					}
 				}
 			}
@@ -1483,7 +1409,9 @@ portfolio .content {
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
+
 	.alt-logo {
+		float: none;
 		display: block;
 		margin: 25px auto 10px;
 		height: 48px;
@@ -1499,5 +1427,26 @@ portfolio .content {
 		font-size: 14px;
 		color: $white;
 		text-align: center;
+	}
+
+	@media screen and(min-width: 750px) {
+		.alt-logo {
+			float: left;
+			display: block;
+			margin: 5px auto 10px;
+			height: 48px;
+			width: 184px;
+			background-image: $url_3;
+			background-size: cover;
+			background-position: center;
+		}
+		.copy {
+			display: block;
+			margin: 22px auto 25px;
+			line-height: 1.25;
+			font-size: 14px;
+			color: $white;
+			text-align: right;
+		}
 	}
 }
