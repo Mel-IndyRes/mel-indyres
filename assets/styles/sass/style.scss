@@ -149,14 +149,24 @@ table {
 	flex-direction: column;
 	justify-content: center;
 
+	.headline {
+		color: $color_breaker_bay_approx !important;
+	}
+
+
+	p {
+		margin-bottom: 10px;
+	}
+
 	ul {
-		list-style: circle inside;
+		margin-left: 30px;
+		list-style: circle outside;
 		list-style-type: circle;
 
 		li {
-			list-style: circle inside;
+			list-style: circle outside;
 			list-style-type: circle;
-			padding: 5px 5px 5px 8% !important;
+			padding: 5px 5px 5px 4% !important;
 		}
 	}
 
@@ -201,8 +211,16 @@ table {
 		}
 	}
 	.service-copy {
-		padding: 20px;
+		padding: 45px;
 		flex-basis: 50%;
+
+		ul {
+			width: 45%;
+			display: block;
+			float: left;
+			margin-left: 10px;
+
+		}
 	}
 	.modal {
 		position: absolute;
